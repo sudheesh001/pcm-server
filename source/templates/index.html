@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Source Website</title>
+</head>
+<body>
+  <h1>Apple Private Click Measurement Demo</h1>
+  <p>The source website in PCM serves the impression from the advertiser and assigns a randomly chosen click identifier</p>
+
+  <a href="http://localhost:9998/"
+    attributesourceid="{{.eight}}"
+    attributeon="http://localhost:9998">Click on this Ad Here</a>
+
+  <p>The advertiser also places a tracking pixel on this website which is hidden and generates a trigger event</p>
+  <img src="http://localhost:9998/tracking-pixel.png" alt="Tracking Pixel" style="visibility: hidden">
+</body>
+</html>
