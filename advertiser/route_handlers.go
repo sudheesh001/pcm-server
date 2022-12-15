@@ -23,6 +23,13 @@ func indexHandler(context *gin.Context) {
 	})
 }
 
+func triggerHandler(context *gin.Context) {
+	referer := "https://pcm-target.gameautomators.com/"
+	context.HTML(http.StatusOK, "trigger.html", gin.H{
+		"referer": referer,
+	})
+}
+
 func reportHandler(context *gin.Context) {
 	fmt.Printf("Recieved report at Advertiser ...\n")
 }

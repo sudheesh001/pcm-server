@@ -42,6 +42,7 @@ func main() {
 	server.LoadHTMLGlob("templates/*")
 
 	server.GET("/", indexHandler)
+	server.GET("/trigger", triggerHandler)
 	server.POST("/.well-known/private-click-measurement/report-attribution/", reportHandler)
 
 	if err := server.Run(net.JoinHostPort(hostname, port)); err != nil {
