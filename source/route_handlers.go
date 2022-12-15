@@ -20,6 +20,15 @@ func indexHandler(context *gin.Context) {
 	})
 }
 
+func trackingPixelHandler(context *gin.Context) {
+	triggerAttribution := helpers.GenerateRandom4BitValue()
+	priority := helpers.GenerateRandom6BitValue()
+	context.Redirect(
+		http.StatusMovedPermanently,
+		fmt.Sprintf(".well-known/private-click-measurement/trigger-attribution/%v/%v", triggerAttribution, priority),
+	)
+}
+
 func reportHandler(context *gin.Context) {
 	fmt.Printf("Received report at Source ...\n")
 }

@@ -44,6 +44,7 @@ func main() {
 	server.LoadHTMLGlob("templates/*")
 
 	server.GET("/", indexHandler)
+	server.GET("/tracking-pixel.png", trackingPixelHandler)
 	server.GET("/.well-known/private-click-measurement/trigger-attribution/:triggerData/:priority", attributionHandler)
 	server.GET("/.well-known/private-click-measurement/trigger-attribution/:triggerData", attributionHandler)
 	server.POST("/.well-known/private-click-measurement/report-attribution/", reportHandler)

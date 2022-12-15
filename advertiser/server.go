@@ -42,7 +42,6 @@ func main() {
 	server.LoadHTMLGlob("templates/*")
 
 	server.GET("/", indexHandler)
-	server.GET("/tracking-pixel.png", trackingPixelHandler)
 	server.POST("/.well-known/private-click-measurement/report-attribution/", reportHandler)
 
 	if err := server.Run(net.JoinHostPort(hostname, port)); err != nil {
