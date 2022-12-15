@@ -31,7 +31,7 @@ func trackingPixelHandler(context *gin.Context) {
 	fmt.Printf("Referer: %v\n", referer)
 	context.Redirect(
 		http.StatusMovedPermanently,
-		fmt.Sprintf("%v/.well-known/private-click-measurement/trigger-attribution/%v/%v", referer, triggerAttribution, priority),
+		fmt.Sprintf("%v.well-known/private-click-measurement/trigger-attribution/%v/%v", referer, triggerAttribution, priority),
 	)
 }
 
